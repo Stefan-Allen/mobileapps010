@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "375148271400",
+    "project_id": "chatapp-fdb1e",
+    "storage_bucket": "chatapp-fdb1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375148271400:android:8172952168e8970303a21d",
+        "android_client_info": {
+          "package_name": "me.stefanallen.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375148271400-q69lqdks45v1a2pd99qjehobp7b3jqff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvfpvKnxV9TLsfCVjTgTOD6Sq1AIfzh8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375148271400-q69lqdks45v1a2pd99qjehobp7b3jqff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
