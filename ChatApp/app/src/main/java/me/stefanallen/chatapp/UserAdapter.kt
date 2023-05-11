@@ -1,5 +1,8 @@
 package me.stefanallen.chatapp
 
+// RecyclerView is the group that contains data, view holder is created the recycler view binds data too it,
+// then the layout manager arranges the data in the list.
+
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater

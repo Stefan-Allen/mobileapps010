@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 
+// Adapter class for messages
 class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -43,6 +44,7 @@ class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) 
         }
     }
 
+    // Determines the view type for recycler
     override fun getItemViewType(position: Int): Int {
 
         val currentMessage = messageList[position]
@@ -54,14 +56,17 @@ class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) 
         }
     }
 
+    // Function to get item count
     override fun getItemCount(): Int {
         return messageList.size
     }
 
+    // View holder for sent messages
     class SentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val sentMessage = itemView.findViewById<TextView>(R.id.txt_send_message)
     }
 
+    //View holder for receive messages
     class ReceiveViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val receiveMessage = itemView.findViewById<TextView>(R.id.txt_receive_message)
     }
