@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
+// Activity for the chat application
 class MainActivity : AppCompatActivity() {
 
     private lateinit var userRecyclerView: RecyclerView
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         userRecyclerView.layoutManager = LinearLayoutManager(this)
         userRecyclerView.adapter = adapter
 
+        // Retrieve the user list from the Firebase Realtime Database
         mDbRef.child("user").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 userList.clear()
@@ -51,12 +53,13 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-
+                // Handle database error
             }
 
         })
     }
 
+    // For menu layout
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
@@ -65,11 +68,11 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == R.id.logout) {
-            //Write logic for logout
-            mAuth.signOut()
+            // For logout action
+            mAuth.signOut()// Sign out user
             val intent = Intent(this@MainActivity, Login::class.java)
             finish()
-            startActivity(intent)
+            startActivity(intent)// Start login activity
             return true
         }
         return true

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <!--Send message design layout-->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -11,6 +12,7 @@
         android:layout_marginRight="5dp"
         android:background="@drawable/btn_background">
 
+        <!--Send message design-->
         <TextView
             android:id="@+id/txt_send_message"
             android:layout_width="wrap_content"

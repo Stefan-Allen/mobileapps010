@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
+// Login activity for chat application
 class Login : AppCompatActivity() {
 
     private lateinit var edtEmail: EditText
@@ -35,6 +36,7 @@ class Login : AppCompatActivity() {
         btnLogin = findViewById(R.id.btnLogin)
         btnSignUp = findViewById(R.id.btnSignUp)
 
+        // Open the sign up activity
         btnSignUp.setOnClickListener {
             val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
@@ -44,6 +46,7 @@ class Login : AppCompatActivity() {
             val email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
 
+            // Toast message if any of the required fields are missing
             if(email.isNullOrBlank() || password.isNullOrBlank()){
                 Toast.makeText(this@Login, "Missing Username or Password.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -52,17 +55,18 @@ class Login : AppCompatActivity() {
         }
     }
 
+    // Logic for logging in the user
     private fun login(email: String, password: String) {
         //logic for logging in user
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // code for log in user
+                    // Login successful open the main activity
                     val intent = Intent(this@Login, MainActivity::class.java)
                     finish()
                     startActivity(intent)
                 } else {
-                    // If sign in fails, display a message to the user.
+                    // If fails display a message to the user.
                     Toast.makeText(this@Login, "User does not exist", Toast.LENGTH_SHORT).show()
                 }
             }
